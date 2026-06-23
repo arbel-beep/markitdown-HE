@@ -40,3 +40,20 @@ Restores the original files from the `.orig` backups.
 ```bash
 python -c "from markitdown import MarkItDown; print(MarkItDown().convert('your_hebrew_file.pdf').markdown)"
 ```
+
+## Claude Code skill: /markitdown_he
+
+`skills/markitdown_he/SKILL.md` adds a `/markitdown_he` slash command for
+Claude Code that batch-converts every file in a folder you choose.
+
+To enable it in a project, copy the skill folder into that project's
+`.claude/skills/`:
+
+```bash
+mkdir -p .claude/skills
+cp -r markitdown-he-patch/skills/markitdown_he .claude/skills/
+```
+
+Then run `/markitdown_he` in Claude Code. First run: paste the folder path
+when asked — it's remembered for next time. Every supported file in that
+folder gets converted to a `.md` file alongside it.
